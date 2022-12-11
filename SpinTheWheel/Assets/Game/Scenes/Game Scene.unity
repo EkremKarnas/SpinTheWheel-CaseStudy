@@ -1129,7 +1129,7 @@ MonoBehaviour:
   slot6DropProbablity: 0
   slot7DropProbablity: 50
   slot8DropProbablity: 0
-  listIdx: 23
+  listIdx: 11
   Slot1:
   - ui_card_icon_death
   - ui_icon_aviator_glasses_easter
@@ -1904,7 +1904,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   spinningTime: 6
-  spinningAngle: -1080
+  spinningAngle: 0
   dropdown: {fileID: 1056174433}
 --- !u!4 &2130995093
 Transform:
