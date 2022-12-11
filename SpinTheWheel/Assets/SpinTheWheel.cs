@@ -14,7 +14,7 @@ public class SpinTheWheel : MonoBehaviour
     void Start()
     {
         ProbablityCalculator();
-
+        spinningAngle = spinningAngle + (360 * Random.Range(3,5));
         spinningAngle = spinningAngle + extraAngle;
 
         Debug.Log(spinningAngle);
