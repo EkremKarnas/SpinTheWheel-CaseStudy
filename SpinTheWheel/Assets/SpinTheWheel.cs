@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using UnityEngine.SceneManagement;
 
 public class SpinTheWheel : MonoBehaviour
 {
@@ -23,6 +24,14 @@ public class SpinTheWheel : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && !isSpinning)
+        {
+            StartCoroutine(SpinTheWheelFunc(spinningTime, spinningAngle));
+        }
+    }
+
+    public void ButtonFunc()
+    {
+        if(!isSpinning)
         {
             StartCoroutine(SpinTheWheelFunc(spinningTime, spinningAngle));
         }
