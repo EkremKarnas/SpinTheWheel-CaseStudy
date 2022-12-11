@@ -944,8 +944,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.3348745, g: 0.509434, b: 0.30998576, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1121,8 +1121,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea8cb47fbd01b646a5b9de41c08dd3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listIdx: 15
-  MyList1:
+  slot1DropProbablity: 0
+  slot2DropProbablity: 0
+  slot3DropProbablity: 50
+  slot4DropProbablity: 0
+  slot5DropProbablity: 0
+  slot6DropProbablity: 0
+  slot7DropProbablity: 50
+  slot8DropProbablity: 0
+  listIdx: 23
+  Slot1:
   - ui_card_icon_death
   - ui_icon_aviator_glasses_easter
   - ui_icon_baseball_cap_easter
@@ -1159,7 +1167,7 @@ MonoBehaviour:
   - UI_Icons_Sniper_Points
   - UI_Icons_Submachine_Points
   - UI_Icons_Vest_Points
-  listIdx2: 0
+  listIdx2: 15
   MyList2:
   - ui_card_icon_death
   - ui_icon_aviator_glasses_easter
@@ -1235,7 +1243,7 @@ MonoBehaviour:
   - UI_Icons_Sniper_Points
   - UI_Icons_Submachine_Points
   - UI_Icons_Vest_Points
-  listIdx4: 0
+  listIdx4: 15
   MyList4:
   - ui_card_icon_death
   - ui_icon_aviator_glasses_easter
@@ -1273,7 +1281,7 @@ MonoBehaviour:
   - UI_Icons_Sniper_Points
   - UI_Icons_Submachine_Points
   - UI_Icons_Vest_Points
-  listIdx5: 0
+  listIdx5: 25
   MyList5:
   - ui_card_icon_death
   - ui_icon_aviator_glasses_easter
@@ -1311,7 +1319,7 @@ MonoBehaviour:
   - UI_Icons_Sniper_Points
   - UI_Icons_Submachine_Points
   - UI_Icons_Vest_Points
-  listIdx6: 0
+  listIdx6: 19
   MyList6:
   - ui_card_icon_death
   - ui_icon_aviator_glasses_easter
@@ -1349,7 +1357,7 @@ MonoBehaviour:
   - UI_Icons_Sniper_Points
   - UI_Icons_Submachine_Points
   - UI_Icons_Vest_Points
-  listIdx7: 0
+  listIdx7: 21
   MyList7:
   - ui_card_icon_death
   - ui_icon_aviator_glasses_easter
@@ -1387,7 +1395,7 @@ MonoBehaviour:
   - UI_Icons_Sniper_Points
   - UI_Icons_Submachine_Points
   - UI_Icons_Vest_Points
-  listIdx8: 0
+  listIdx8: 27
   MyList8:
   - ui_card_icon_death
   - ui_icon_aviator_glasses_easter
@@ -1896,69 +1904,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   spinningTime: 6
-  spinningAngle: -1170
-  slot1Transform: {fileID: 837637599}
-  slot2Transform: {fileID: 0}
-  slot3Transform: {fileID: 0}
-  slot4Transform: {fileID: 0}
-  slot5Transform: {fileID: 0}
-  slot6Transform: {fileID: 0}
-  slot7Transform: {fileID: 0}
-  slot8Transform: {fileID: 0}
-  slot1Object: {fileID: 2972514544458990130, guid: b5e169f5b22fa4748a169095c9add9ec, type: 3}
-  slot2Object: {fileID: 0}
-  slot3Object: {fileID: 0}
-  slot4Object: {fileID: 0}
-  slot5Object: {fileID: 0}
-  slot6Object: {fileID: 0}
-  slot7Object: {fileID: 0}
-  slot8Object: {fileID: 0}
-  objList:
-  - {fileID: 2972514544458990130, guid: b5e169f5b22fa4748a169095c9add9ec, type: 3}
-  - {fileID: 4414582768997270105, guid: 3b8c332f625998d43a319510efbd7636, type: 3}
-  - {fileID: 5177411820052500661, guid: 9a5074960ea87a744ac822165ccefe6a, type: 3}
-  - {fileID: 3977260965582865107, guid: a50da8e69f17da04dafefdc6d3b0dc35, type: 3}
-  - {fileID: 4556322736805317858, guid: b515710232568194b9c30deca6e0f83f, type: 3}
-  - {fileID: 6260222328610478390, guid: 67565b4ccf0efcb47970d3b615753b64, type: 3}
-  - {fileID: 3964518334599363456, guid: ee5d3e388af738b448e2ae36d04c6891, type: 3}
-  - {fileID: 1975895818839992260, guid: 39728bcb7accd7b4fb2e494d64ed2fb9, type: 3}
-  - {fileID: 1704340384483053153, guid: 1d9686fbf11673f46895670212550001, type: 3}
-  - {fileID: 30482726726217090, guid: 13827a76e724b984bb94feb4597bfd64, type: 3}
-  - {fileID: 3878746492050458341, guid: d1b3799c783d0864b80b21879b7c4b90, type: 3}
-  - {fileID: 7716780565145498896, guid: 5feb881aec420c64db2611e951c9bb27, type: 3}
-  - {fileID: 2347966845007868178, guid: f56f70743c40d054c84003199953d420, type: 3}
-  - {fileID: 5398951924468282937, guid: 6a7aba2969cd17d48b62483184f0f9e1, type: 3}
-  - {fileID: 8715025057992054085, guid: 44ab7234085b94149a682b943a6eef0d, type: 3}
-  - {fileID: 4750166060045340724, guid: e717e84a6360ee74aa9bf1f49c9d04f0, type: 3}
-  - {fileID: 82344188092568086, guid: 278ccf9821aedc149a10856872eecf3e, type: 3}
-  - {fileID: 3256995753217103125, guid: 52c2e5ce82fece6469e23957a598abff, type: 3}
-  - {fileID: 8197780252384245762, guid: 234a525ec03286240b41b4a55e204e27, type: 3}
-  - {fileID: 3025483526075071851, guid: 322ede930c6444d47b0d142a9fdf6e67, type: 3}
-  - {fileID: 3889516629898415979, guid: ecb9676edb029684cb7a3122424a436c, type: 3}
-  - {fileID: 3469786377774784577, guid: 6ff798c442d6dbf4cb1f6eb1d6b4bee6, type: 3}
-  - {fileID: 8480492314162096575, guid: fdb41cb568c66a9408001c3f189bcd23, type: 3}
-  - {fileID: 7723924593139641343, guid: 5105fc6c50058ba4ab47f3f66ae26b36, type: 3}
-  - {fileID: 6148604199771156683, guid: d53701f64822d014da2e6ee0fbd5d4c2, type: 3}
-  - {fileID: 1394555174483144082, guid: bf9912c9e80d98d45bd383b99f98ebb1, type: 3}
-  - {fileID: 3740698652174006927, guid: 9f9d5501a7d99ba48ba16081ef0719aa, type: 3}
-  - {fileID: 8946488268492319294, guid: 652fb36f00e320840aa4123d6ede9b25, type: 3}
-  - {fileID: 8397003302699446157, guid: cf795438bc9b8ad478bfba0787485430, type: 3}
-  - {fileID: 7402109231102403831, guid: 26b8c1a45f787274383dd08eea815718, type: 3}
-  - {fileID: 6913179485751718875, guid: 2c70e6899d5dc4f40b26d99962f1d498, type: 3}
-  - {fileID: 6026737355098743533, guid: 671b66ee183d37a47ade0e3e4b4689ea, type: 3}
-  - {fileID: 5186278302895684696, guid: 2149e6187027ea5468e3ad8789b53310, type: 3}
-  - {fileID: 3330626897855521821, guid: 7837e36853f53354f84f227fe571d4f4, type: 3}
-  - {fileID: 6566392791518138477, guid: 88ce71c28e26d6d47b230a035bfd1bad, type: 3}
-  - {fileID: 7560013650870948100, guid: 3770cee297db207469ae0334838f8229, type: 3}
-  transformList:
-  - {fileID: 837637599}
-  - {fileID: 50834302}
-  - {fileID: 1264221342}
-  - {fileID: 243063035}
-  - {fileID: 1311743734}
-  - {fileID: 315313089}
-  - {fileID: 1087420015}
-  - {fileID: 2138565783}
+  spinningAngle: -1080
+  dropdown: {fileID: 1056174433}
 --- !u!4 &2130995093
 Transform:
   m_ObjectHideFlags: 0
