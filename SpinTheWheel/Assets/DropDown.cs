@@ -55,7 +55,7 @@ public class DropDown : MonoBehaviour
     public List<GameObject> ObjList;
     public List<Transform> transformList;
     private List<int> intList = new List<int>();
-    private GameObject newObj4;
+    private GameObject instantiatedObject;
     void Awake()
     {
         intList.Add(listIdx);
@@ -72,8 +72,8 @@ public class DropDown : MonoBehaviour
     {
         for (int i = 0; i < 8; i++)
         {
-            newObj4 = Instantiate(ObjList[intList[i]], transformList[i].transform.position, transformList[i].transform.rotation);
-            newObj4.transform.SetParent(transformList[i]);
+            instantiatedObject = Instantiate(ObjList[intList[i]], transformList[i].transform.position, transformList[i].transform.rotation);
+            instantiatedObject.transform.SetParent(transformList[i]);
         }
     }
 }

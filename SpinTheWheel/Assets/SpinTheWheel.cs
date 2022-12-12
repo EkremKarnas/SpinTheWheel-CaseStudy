@@ -10,74 +10,80 @@ public class SpinTheWheel : MonoBehaviour
     private bool isSpinning;
     [SerializeField] int spinningTime;
     [SerializeField] float spinningAngle;
-    [SerializeField] ObjectTransporter objectTransporter;
+    [SerializeField] ObjectTransporterAndUI objectTransporter;
     [SerializeField] DropDown dropdown;
+    [SerializeField] GameObject takePrizesButton;
+    [SerializeField] UI uI;
     private float extraAngle;
     private int itemNumber;
     private float randomProbablity;
     void Start()
     {
-        ProbablityCalculator();
-        spinningAngle = spinningAngle + (360 * Random.Range(3, 5));
-        spinningAngle = spinningAngle + extraAngle;
-
-        // Debug.Log(spinningAngle);
+        takePrizesButton.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            var name = dropdown.transformList[3].GetComponentInChildren<Rigidbody>().gameObject;
-            Instantiate(name, Vector3.up, Quaternion.identity);
-        }
+    
     }
 
-    public void ButtonFunc()
+    public void SpinButtonFunc()
     {
-        if (!isSpinning)
+        if (!isSpinning && !ObjectTransporterAndUI.IsPrizesTaken && !UI.IsGameOver)
         {
-            StartCoroutine(SpinTheWheelFunc(spinningTime, spinningAngle));
-
-            // var gameObject = dropdown.transformList[itemNumber].GetComponentInChildren<Rigidbody>().gameObject;
-            // objectTransporter.MoveObject(gameObject);
-            StartCoroutine(WaitAndMoveFunc());
-
-            spinningAngle = 0;
-
+            takePrizesButton.SetActive(false);
             ProbablityCalculator();
             spinningAngle = spinningAngle + (360 * Random.Range(3, 5));
             spinningAngle = spinningAngle + extraAngle;
+            StartCoroutine(SpinTheWheelFunc(spinningTime, spinningAngle));
+
+            StartCoroutine(WaitAndMoveFunc());
+            spinningAngle = 0;
         }
+    }
+
+    public void TakePrizesButton()
+    {
+        objectTransporter.TakePrizes();
     }
 
     IEnumerator SpinTheWheelFunc(float time, float spinningAngle)
     {
         isSpinning = true;
         float timer = 0.0f;
+        float startAngle = transform.eulerAngles.z;
+        spinningAngle = spinningAngle - startAngle;
+
 
         while (timer < time)
         {
             float angle = spinningAngle * animationCurve.Evaluate(timer / time);
-            transform.eulerAngles = new Vector3(0f, 0f, angle);
+            transform.eulerAngles = new Vector3(0f, 0f, angle + startAngle);
             timer += Time.deltaTime;
 
             yield return null;
         }
-        transform.eulerAngles = new Vector3(0f, 0f, spinningAngle);
+        transform.eulerAngles = new Vector3(0f, 0f, spinningAngle + startAngle);
         isSpinning = false;
     }
 
     IEnumerator WaitAndMoveFunc()
     {
-        
-
         yield return new WaitForSeconds(spinningTime);
         var gameObject = dropdown.transformList[itemNumber].GetComponentInChildren<Rigidbody>().gameObject;
-        objectTransporter.MoveObject(gameObject);
-        Debug.Log(randomProbablity);
-        Debug.Log(itemNumber);
-        // itemNumber = -1;
+
+        if(gameObject.CompareTag("DeathCard"))
+        {
+            uI.GameOver();
+        }
+
+        if(!gameObject.CompareTag("DeathCard"))
+        {
+            objectTransporter.MoveObject(gameObject);
+        }
+
+        if(!UI.IsGameOver)
+        takePrizesButton.SetActive(true);
     }
 
     void ProbablityCalculator()
@@ -141,6 +147,5 @@ public class SpinTheWheel : MonoBehaviour
             extraAngle = 315;
             itemNumber = 7;
         }
-
     }
 }
